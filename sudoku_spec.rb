@@ -2,7 +2,17 @@ require_relative 'sudoku'
 
 describe Sudoku do
   describe '#possible_numbers_for_cell' do
+    it 'returns an array' do
 
+    end
+
+    it 'returns correct possible values for the cell' do
+
+    end
+
+    it 'returns an empty array if the board is already populated' do
+
+    end
   end
 
   describe '#is_possible_in_subsquare' do

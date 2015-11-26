@@ -19,6 +19,7 @@ class Sudoku
 
   # Loops through 1-9 and returns an array of possible numbers for that cell
   def possible_numbers_for_cell(i,j)
+    return [] if @board[i,j] == '-'
     possible_numbers = []
     (1..9).each do |x|
       subsquare = is_possible_in_subsquare(i,j,num)
