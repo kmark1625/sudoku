@@ -47,7 +47,10 @@ end
 
 # Determines whether the number is possible in the row
 def is_possible_in_row(board,i,j,num)
-
+  (0..8).each do |x|
+    return false if board[x][j] == num
+  end
+  true
 end
 
 # Determines whether the number is possible in the column
