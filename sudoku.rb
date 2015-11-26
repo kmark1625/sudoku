@@ -37,10 +37,12 @@ def possible_numbers_for_cell(array,i,j)
     column = is_possible_in_column(array,i,j,num)
     possible_numbers << x if subsquare && row && column
   end
+  possible_numbers
 end
 
 # Takes the gameboard and determines whether the number is possible in the grid
 def is_possible_in_subsquare(array,i,j,num)
+
 end
 
 # Determines whether the number is possible in the row
