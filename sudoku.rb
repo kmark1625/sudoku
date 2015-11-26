@@ -2,7 +2,7 @@ class Sudoku
   attr_accessor :board
 
   def initialize(board_string)
-    @board = board_string.each_slice(9).to_a
+    @board = board_string.split('').each_slice(9).to_a
   end
 
   def solve(board_string)
@@ -31,7 +31,8 @@ class Sudoku
 
   # Takes the gameboard and determines whether the number is possible in the grid
   def is_possible_in_subsquare(i,j,num)
-    
+    subsquare = get_subsquare(i,j)
+    !subsquare.include?(num)
   end
 
   # Determines whether the number is possible in the row
@@ -48,5 +49,13 @@ class Sudoku
       return false if @board[x][j] == num
     end
     true
+  end
+
+  # Returns an array holding all numbers in the subsquare based on i, j position
+  def get_subsquare(i,j)
+    row_1 = board[j/3].slice(i/3..i/3 + 2)
+    row_2 = board[j/3 + 1].slice(i/3..i/3 + 2)
+    row_3 = board[j/3 + 2].slice(i/3..i/3 + 2)
+    return row_1 + row_2 + row_3
   end
 end
