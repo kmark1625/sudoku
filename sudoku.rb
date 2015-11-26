@@ -2,6 +2,7 @@ class Sudoku
   attr_reader :board
 
   def initialize(board_string)
+    @board = board_string.each_slice(9).to_a
   end
 
   def solve(board_string)
