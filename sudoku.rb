@@ -30,11 +30,17 @@ end
 
 # Loops through 1-9 and returns an array of possible numbers for that cell
 def possible_numbers_for_cell(array,i,j)
-
+  possible_numbers = []
+  (1..9).each do |x|
+    subsquare = is_possible_in_subsquare(array,i,j,num)
+    row = is_possible_in_row(array,i,j,num)
+    column = is_possible_in_column(array,i,j,num)
+    possible_numbers << x if subsquare && row && column
+  end
 end
 
 # Takes the gameboard and determines whether the number is possible in the grid
-def  is_possible_in_subsquare(array,i,j,num)
+def is_possible_in_subsquare(array,i,j,num)
 end
 
 # Determines whether the number is possible in the row
