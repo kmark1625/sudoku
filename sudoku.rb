@@ -29,16 +29,18 @@ def board_to_string(board)
 end
 
 # Loops through 1-9 and returns an array of possible numbers for that cell
-def possible_numbers_for_cell
+def possible_numbers_for_cell(array,i,j)
+
 end
 
 # Takes the gameboard and determines whether the number is possible in the grid
-def  is_possible_in_subsquare
+def  is_possible_in_subsquare(array,i,j,num)
 end
 
 # Determines whether the number is possible in the row
-def is_possible_in_row
+def is_possible_in_row(array,i,j,num)
 end
 
 # Determines whether the number is possible in the column
-def is_possible_in_column
+def is_possible_in_column(array,i,j,num)
+end
