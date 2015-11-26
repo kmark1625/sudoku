@@ -55,4 +55,8 @@ end
 
 # Determines whether the number is possible in the column
 def is_possible_in_column(board,i,j,num)
+  (0..8).each do |y|
+    return false if board[i][y] == num
+  end
+  true
 end
