@@ -21,11 +21,10 @@ describe Sudoku do
       j = 2
       num = 8
 
-      expect(puzzle.is_possible_in_subsquare(i,j,num)).to be_falsey
+      expect(puzzle.is_possible_in_column(i,j,num)).to be_falsey
     end
 
-  describe '#is_possible_in_subsquare' do
-    it 'returns true when the number does not exist in the subsquare' do
+    it 'returns true when the number does not exist in the ' do
       puzzle = Sudoku.new('')
       puzzle.board = [[6,'-',8,7,3,'-','-','-','-'],
               [2,'-','-','-','-','-',4,6,'-'],
@@ -40,7 +39,7 @@ describe Sudoku do
       j = 2
       num = 9
 
-      expect(puzzle.is_possible_in_subsquare(i,j,num)).to be_truthy
+      expect(puzzle.is_possible_in_column(i,j,num)).to be_truthy
     end
   end
 
@@ -80,7 +79,6 @@ describe Sudoku do
 
       expect(puzzle.is_possible_in_column(i,j,num)).to be_truthy
     end
-  end
   end
 
   describe '#is_possible_in_column' do
