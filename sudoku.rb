@@ -28,6 +28,7 @@ class Sudoku
   end
 
   def board_to_string(board)
+    @board.flatten.join('')
   end
 
   # Loops through 1-9 and returns an array of possible numbers for that cell
