@@ -6,15 +6,29 @@ class Sudoku
   end
 
   def solve(board_string)
+    loop do
+      num_filled_in = 0
+      board.each_with_index do |row, j|
+        row.each_with_index do |cell, i|
+          possible_numbers = possible_numbers_for_cell(i, j)
+          if possible_numbers.length == 1
+            board[j][i] = possible_numbers[0]
+          end
+        end
+      end
+      break if num_filled_in == 0 || solved?
+    end
   end
 
-  def solved?(board)
+  def solved?
+    !board.flatten.include?('-')
   end
 
   def pretty_board(board)
   end
 
   def board_to_string(board)
+    @board.flatten.join('')
   end
 
   # Loops through 1-9 and returns an array of possible numbers for that cell
