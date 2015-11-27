@@ -19,12 +19,12 @@ class Sudoku
 
   # Loops through 1-9 and returns an array of possible numbers for that cell
   def possible_numbers_for_cell(i,j)
-    return [] if @board[i,j] == '-'
+    return [] if @board[i][j] != '-'
     possible_numbers = []
     (1..9).each do |x|
-      subsquare = is_possible_in_subsquare(i,j,num)
-      row = is_possible_in_row(i,j,num)
-      column = is_possible_in_column(i,j,num)
+      subsquare = is_possible_in_subsquare(i,j,x)
+      row = is_possible_in_row(i,j,x)
+      column = is_possible_in_column(i,j,x)
       possible_numbers << x if subsquare && row && column
     end
     possible_numbers
@@ -38,16 +38,16 @@ class Sudoku
 
   # Determines whether the number is possible in the row
   def is_possible_in_row(i,j,num)
-    (0..8).each do |y|
-      return false if @board[i][y] == num
+    (0..8).each do |x|
+      return false if @board[j][x] == num
     end
     true
   end
 
   # Determines whether the number is possible in the column
   def is_possible_in_column(i,j,num)
-    (0..8).each do |x|
-      return false if @board[x][j] == num
+    (0..8).each do |y|
+      return false if @board[y][i] == num
     end
     true
   end
